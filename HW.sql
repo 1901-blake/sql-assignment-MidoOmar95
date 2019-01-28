@@ -205,8 +205,7 @@ create or replace function update_emp(
     p_phone varchar,
     p_fax varchar,
     p_email varchar
-)
-returns void as $$
+) returns void as $$
 begin
     update employee
     	set birthdate = p_birthdate,
@@ -222,7 +221,7 @@ begin
 end;
 $$ language plpgsql;
 
-select update_emp(10, '1988-10-30', 'Hwy 166 S', 'Pocahontas', 'AR', 'US', '72566', '888-888-9999', 'blahblah', 'bkjr@gmail.com');
+select update_emp(10, '1980-01-20', 'Bruce B Downs Blvd', 'Tampa', 'FL', 'US', '44444', '444-444-4444', 'lololol', 'bkjr@gmail.com');
 
 
 
@@ -339,7 +338,7 @@ returns void as $$
 	end;
 $$ language plpgsql;
 
-select insert_customer(62, 'Ricky', 'Bobby', 'Revature', 'Hwy 166 N', 'Talledaga', 'ZZ', 'US', '77777', '888-888-8888', '999-999-999', 'shakeandbake@yahoo.com', 9);
+select insert_customer(62, 'Blake', 'Kruppa', 'Revature', 'Bruce B Downs Blvd', 'Tampa', 'FL', 'US', '55555', '555-555-5555', '555-555-555', 'bkruppa@gmail.com', 9);
 
 
 
@@ -360,8 +359,8 @@ create trigger after_album_update
 	for each row
     execute procedure hello_world();
    
-insert into album values (350, 'Testing', 275);
-update album set title = 'Updated Title' where albumid = 350;
+insert into album values (350, 'Test', 275);
+update album set title = 'New Title' where albumid = 350;
 select * from album;
 delete from album where albumid = 350;
 
